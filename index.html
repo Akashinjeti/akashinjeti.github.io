@@ -34,7 +34,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display
 .hero-right{flex:0 0 380px;display:flex;flex-direction:column;gap:1rem;padding-left:4rem}
 .stat-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:border-color 0.2s,transform 0.2s;animation:fadeSlide 0.6s ease both}
 .stat-card:hover{border-color:var(--blue);transform:translateX(4px)}
-.stat-card:nth-child(1){animation-delay:0.1s}.stat-card:nth-child(2){animation-delay:0.2s}.stat-card:nth-child(3){animation-delay:0.3s}.stat-card:nth-child(4){animation-delay:0.4s}
+.stat-card:nth-child(1){animation-delay:0.1s}.stat-card:nth-child(2){animation-delay:0.2s}.stat-card:nth-child(3){animation-delay:0.3s}.stat-card:nth-child(4){animation-delay:0.4s}.stat-card:nth-child(5){animation-delay:0.5s}
 .stat-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--blue);min-width:60px}
 .stat-label{font-size:0.85rem;color:var(--muted);line-height:1.4}.stat-label strong{display:block;color:var(--text);font-weight:500}
 section{padding:6rem 3rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
@@ -49,6 +49,8 @@ section{padding:6rem 3rem;max-width:1200px;margin:0 auto;position:relative;z-ind
 .project-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:all 0.25s;position:relative;overflow:hidden}
 .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--purple));opacity:0;transition:opacity 0.2s}
 .project-card:hover{border-color:rgba(88,166,255,0.3);transform:translateY(-4px)}.project-card:hover::before{opacity:1}
+.project-card.fintech::before{background:linear-gradient(90deg,var(--cyan),var(--blue))}
+.project-card.fintech:hover{border-color:rgba(57,211,83,0.3)}
 .project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
 .project-icon{font-size:2rem;background:var(--bg);border:1px solid var(--border);border-radius:10px;width:52px;height:52px;display:flex;align-items:center;justify-content:center}
 .project-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -61,6 +63,7 @@ section{padding:6rem 3rem;max-width:1200px;margin:0 auto;position:relative;z-ind
 .project-tag.purple{background:rgba(188,140,255,0.08);color:var(--purple);border-color:rgba(188,140,255,0.2)}
 .project-tag.green{background:rgba(57,211,83,0.08);color:var(--cyan);border-color:rgba(57,211,83,0.2)}
 .project-tag.orange{background:rgba(247,129,102,0.08);color:var(--orange);border-color:rgba(247,129,102,0.2)}
+.project-tag.yellow{background:rgba(227,179,65,0.08);color:var(--yellow);border-color:rgba(227,179,65,0.2)}
 .live-badge{display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-family:'DM Mono',monospace;color:var(--cyan);background:rgba(57,211,83,0.1);border:1px solid rgba(57,211,83,0.25);padding:3px 10px;border-radius:20px}
 .live-badge::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:blink 1.5s infinite}
 .timeline{display:flex;flex-direction:column}
@@ -76,10 +79,19 @@ section{padding:6rem 3rem;max-width:1200px;margin:0 auto;position:relative;z-ind
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
 .cert-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;transition:all 0.2s}
 .cert-card:hover{border-color:var(--blue);transform:translateY(-2px)}
+.cert-card.duolingo{border-color:rgba(88,204,2,0.25);background:linear-gradient(135deg,var(--surface2),rgba(88,204,2,0.04))}
+.cert-card.duolingo:hover{border-color:rgba(88,204,2,0.5)}
 .cert-icon{font-size:1.5rem;min-width:36px}
 .cert-name{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:3px}
 .cert-org{font-size:0.78rem;color:var(--blue);font-family:'DM Mono',monospace}
 .cert-date{font-size:0.74rem;color:var(--muted);margin-top:2px}
+.det-score{display:flex;align-items:baseline;gap:4px;margin:8px 0 4px}
+.det-score-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#58cc02;line-height:1}
+.det-score-denom{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--muted)}
+.det-cefr{display:inline-flex;align-items:center;gap:4px;font-size:0.68rem;font-family:'DM Mono',monospace;color:#58cc02;background:rgba(88,204,2,0.1);border:1px solid rgba(88,204,2,0.25);padding:2px 8px;border-radius:20px;margin-bottom:6px}
+.det-subscores{display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;margin-top:6px}
+.det-sub{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.det-sub span{color:var(--text);font-weight:500}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .contact-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;display:flex;align-items:center;gap:1rem;transition:all 0.2s}
 .contact-card:hover{border-color:var(--blue);transform:translateY(-2px)}
@@ -118,17 +130,18 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
     <div class="hero-tag">Open to opportunities · Hyderabad 🇮🇳</div>
     <h1 class="hero-name">Akash Kumar<span class="line2">Injeti</span></h1>
     <div class="hero-role"><span>GenAI</span> & LLM Engineer · B.Tech ECE · Raghu Engineering College</div>
-    <p class="hero-desc">Building production-ready AI products with Python, LLMs, LangChain and RAG. Shipped 2 live apps with real payments, real auth, and real users — from zero to deployed.</p>
+    <p class="hero-desc">Building production-ready AI products with Python, LLMs, LangChain and RAG. Shipped <strong style="color:var(--text)">3 live apps</strong> with real payments, real auth, and real users — from zero to deployed.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects →</a>
       <a href="#contact" class="btn-secondary">Get in Touch</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="stat-card"><div class="stat-num">2</div><div class="stat-label"><strong>Live AI Products</strong>Deployed & used by real people</div></div>
+    <div class="stat-card"><div class="stat-num">3</div><div class="stat-label"><strong>Live AI Products</strong>Deployed & used by real people</div></div>
     <div class="stat-card"><div class="stat-num">8.20</div><div class="stat-label"><strong>B.Tech CGPA</strong>Raghu Engineering College (2021–2025)</div></div>
-    <div class="stat-card"><div class="stat-num">11+</div><div class="stat-label"><strong>AI Features Built</strong>Across both products</div></div>
+    <div class="stat-card"><div class="stat-num">11+</div><div class="stat-label"><strong>AI Features Built</strong>Across all products</div></div>
     <div class="stat-card"><div class="stat-num">4</div><div class="stat-label"><strong>Languages Supported</strong>EN · తె · हि · த</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:#58cc02">120</div><div class="stat-label"><strong>Duolingo DET Score</strong>CEFR B2 · June 2025</div></div>
   </div>
 </div>
 
@@ -205,9 +218,28 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card fintech">
       <div class="project-header">
         <div class="project-icon">⚡</div>
+        <div class="project-links">
+          <span class="live-badge">LIVE</span>
+          <a href="https://akfunded.streamlit.app" target="_blank" class="project-link">↗ Demo</a>
+          <a href="https://github.com/Akashinjeti/AKFunded" target="_blank" class="project-link">⭐ Code</a>
+        </div>
+      </div>
+      <div class="project-name">AKFunded</div>
+      <div class="project-desc">India's prop trading challenge platform — simulate capital, pass the challenge rules (profit target, daily loss limit, drawdown, min days), earn your funded badge. Live TradingView charts, real-time P&L tracking, leaderboard, and full trade history per user.</div>
+      <div class="project-tags">
+        <span class="project-tag green">Python</span><span class="project-tag green">Streamlit</span>
+        <span class="project-tag purple">Supabase</span><span class="project-tag purple">PostgreSQL</span>
+        <span class="project-tag green">Razorpay</span><span class="project-tag yellow">TradingView</span>
+        <span class="project-tag orange">Fintech</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🔬</div>
         <div class="project-links"><span style="font-size:0.72rem;font-family:'DM Mono',monospace;color:var(--muted);border:1px solid var(--border);padding:3px 10px;border-radius:20px">B.TECH PROJECT</span></div>
       </div>
       <div class="project-name">Approximate 4:2 Compressor (CNTFET)</div>
@@ -215,19 +247,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
       <div class="project-tags">
         <span class="project-tag orange">Cadence Virtuoso</span><span class="project-tag purple">CNTFET</span>
         <span class="project-tag">Verilog</span><span class="project-tag">VLSI Design</span>
-      </div>
-    </div>
-
-    <div class="project-card" style="border-style:dashed;opacity:0.55">
-      <div class="project-header">
-        <div class="project-icon">🚀</div>
-        <div class="project-links"><span style="font-size:0.72rem;font-family:'DM Mono',monospace;color:var(--muted);border:1px solid var(--border);padding:3px 10px;border-radius:20px">COMING SOON</span></div>
-      </div>
-      <div class="project-name">AI Resume Analyzer</div>
-      <div class="project-desc">Upload resume → AI gives ATS score, improvement suggestions, job match analysis. Built with RAG + LangChain + FastAPI.</div>
-      <div class="project-tags">
-        <span class="project-tag">LangChain</span><span class="project-tag purple">RAG</span>
-        <span class="project-tag green">FastAPI</span><span class="project-tag">PDF Parsing</span>
       </div>
     </div>
 
@@ -240,7 +259,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
   <div class="section-tag">academic journey</div>
   <h2 class="section-title">Education</h2>
   <div class="timeline">
-
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
@@ -250,7 +268,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
         <div class="timeline-desc">Studied ECE with focus on digital circuit design and VLSI simulation. Completed B.Tech final year project on energy-efficient CNTFET-based compressor. Active IEEE member. Participated in IEEE XTREME 17.0 global programming competition (October 2023). Self-trained in GenAI, LLMs, LangChain and RAG systems alongside academics.</div>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
@@ -260,7 +277,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
         <div class="timeline-desc">Completed Intermediate with MPC stream. Built strong foundation in mathematics and sciences.</div>
       </div>
     </div>
-
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-content">
@@ -270,7 +286,6 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
         <div class="timeline-desc">Completed SSC with consistent academic performance.</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -280,6 +295,27 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
   <div class="section-tag">achievements & credentials</div>
   <h2 class="section-title">Certifications & Achievements</h2>
   <div class="cert-grid">
+
+    <div class="cert-card duolingo">
+      <div class="cert-icon">🦜</div>
+      <div style="flex:1">
+        <div class="cert-name">Duolingo English Test</div>
+        <div class="cert-org" style="color:#58cc02">Official Certificate · Verified</div>
+        <div class="det-score">
+          <span class="det-score-num">120</span>
+          <span class="det-score-denom">/ 160</span>
+        </div>
+        <div class="det-cefr">● Upper Intermediate — CEFR B2</div>
+        <div class="det-subscores">
+          <div class="det-sub">Speaking <span>115</span></div>
+          <div class="det-sub">Writing <span>120</span></div>
+          <div class="det-sub">Reading <span>120</span></div>
+          <div class="det-sub">Listening <span>115</span></div>
+        </div>
+        <div class="cert-date" style="margin-top:8px">June 19, 2025 · ID: s5frh23hzqd7dqvo</div>
+      </div>
+    </div>
+
     <div class="cert-card">
       <div class="cert-icon">🏆</div>
       <div>
@@ -288,6 +324,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
         <div class="cert-date">July – September 2023 · 8 weeks</div>
       </div>
     </div>
+
     <div class="cert-card">
       <div class="cert-icon">🤖</div>
       <div>
@@ -296,6 +333,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
         <div class="cert-date">June – July 2024</div>
       </div>
     </div>
+
     <div class="cert-card">
       <div class="cert-icon">⚡</div>
       <div>
@@ -304,6 +342,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
         <div class="cert-date">October 28, 2023</div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -330,7 +369,7 @@ footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;align-i
 </section>
 
 <footer>
-  <div class="footer-text">© 2025 Akash Kumar Injeti · Hyderabad,Telangana</div>
+  <div class="footer-text">© 2025 Akash Kumar Injeti · Hyderabad, Telangana</div>
   <div class="footer-built">built with <span>Python</span> · <span>AI</span> · lots of ☕</div>
 </footer>
 
